@@ -8,10 +8,10 @@ This is a Telegram URL Upload Bot!
 
 /help for more details..
 
-Support Group : @TroJanzSupport
+Owner : @Amani_m_h_d
 """
 
-    HELP_USER = """Hai I'am a URL Uploader bot..
+    HELP_USER = """<b>Hai I'am a URL Uploader bot..</b>
     
 1. Send url (Link | New Name with Extension).
 2. Send Custom Thumbnail (Optional).
@@ -21,7 +21,7 @@ Support Group : @TroJanzSupport
    Video  - Give File as video without Screenshots
    DFile  - Give File without Screenshots
 
-Support Group : @TroJanzSupport
+Owner : @Amani_m_h_d
 """
 
     FORMAT_SELECTION = """Select the desired format: <a href='{}'>file size might be approximate</a>
@@ -33,9 +33,9 @@ You can use /deletethumbnail to delete the auto-generated thumbnail."""
 URL | newfilename | username | password"""
 
 
-    DOWNLOAD_START = "Downloading..."
+    DOWNLOAD_START = "Downloading 📥📥..."
     
-    UPLOAD_START = "Uploading now.."
+    UPLOAD_START = "Uploading now 🚀🚀.."
     
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds. \n\nUploaded in {} seconds."
 
