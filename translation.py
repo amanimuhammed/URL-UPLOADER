@@ -16,10 +16,11 @@ Owner : @Amani_m_h_d
 1. Send url (Link | New Name with Extension).
 2. Send Custom Thumbnail (Optional).
 3. Select the button.
-   SVideo - Give File as video with Screenshots
-   DFile  - Give File with Screenshots
-   Video  - Give File as video without Screenshots
-   DFile  - Give File without Screenshots
+
+  <b>SVideo -</b> <code>Give File as video with Screenshots</code>
+  <b>DFile -</b> <code>Give File with Screenshots</code>
+  <b>Video -</b> <code>Give File as video without Screenshots</code>
+  <b>DFile  -</b> <code>Give File without Screenshots</code>
 
 Owner : @Amani_m_h_d
 """
