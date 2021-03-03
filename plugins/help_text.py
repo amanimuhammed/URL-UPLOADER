@@ -27,7 +27,7 @@ async def start(bot, update):
     )
 
 
-@Client.on_message(filters.private & filters.command(["about"]))
+@Client.on_message(filters.command(["about"]))
 def about(bot, update):
     
     bot.send_message(
