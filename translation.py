@@ -25,7 +25,9 @@ Owner : @Amani_m_h_d
 Owner : @Amani_m_h_d
 """
 
-     ABOUT_TEXT = """➠<b>My Name :</b> <code>URL UPLOADER🤓</code>
+     ABOUT_TEXT = """ Hai guys...
+
+➠<b>My Name :</b> <code>URL UPLOADER🤓</code>
 ➠<b>Dev :</b> <a href='https://t.me/Amani_m_h_d'>Amani Muhammed</a>
 ➠<b>Credits :</b> <code>Everyone in this journey</code>
 ➠<b>Language :</b> <code>Python3</code>
