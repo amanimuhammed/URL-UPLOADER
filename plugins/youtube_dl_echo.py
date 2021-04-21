@@ -1,61 +1,39 @@
+  
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-import asyncio
-import json
-import math
 import os
 import time
-from PIL import Image
-# the secret configuration specific things
+import json
+import asyncio
 
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
     from config import Config
 
-# the Strings used for this "thing"
 from translation import Translation
 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from database.database import *
-from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import humanbytes
 from helper_funcs.help_uploadbot import DownLoadFile
 
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
-@pyrogram.Client.on_message(pyrogram.filters.regex(pattern=".*http.*"))
+@Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
-        await update.reply_text("You are B A N N E D 🤣🤣🤣🤣")
+        await bot.delete_messages(
+            chat_id=update.chat.id,
+            message_ids=update.message_id,
+            revoke=True
+        )
         return
-    TRChatBase(update.from_user.id, update.text, "/echo")
-    update_channel = Config.UPDATE_CHANNEL
-    if update_channel:
-        try:
-            user = await bot.get_chat_member(update_channel, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text("🤭 Sorry Dude, You are **B A N N E D 🤣🤣🤣**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
-                text="**Join My Updates Channel to use ME 😎 🤭**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join My Updates Channel", url=f"https://t.me/{update_channel}")]
-              ])
-            )
-            return
-        except Exception:
-            await update.reply_text("Something Wrong. Contact my Support Group")
-            return
     fmsg = await update.reply_text("🧐 checking the given link 🥱", quote=True)   
     url = update.text
     youtube_dl_username = None
